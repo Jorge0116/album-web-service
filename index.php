@@ -57,15 +57,46 @@ function bondJSON(data){
 //JSON processing data goes here
 //using this i can see the object in the console
 	console.log(data);
+	//this defines the type of info return
+	$('#filmtitle').html(data.title);
+
+	$.each(data.films, function(i, item){
+		let str = bondTemplate(item);
+		
+		$('<div></div>').html(str).appendTo('#films');
+
+	});
 // this way we can see all of the data in this page 
+	/*
 	let myData = JSON.stringify(data,null,4);
 	myData = '<pre>' + myData + '</pre>';
 	$("#output").html(myData);
+	 */
 
 
 // this works but the text is bunched up 
 //	$("#output").text(JSON.stringify(data));
 
+}
+
+function bondTemplate(){
+	return `
+	<div class="films">
+				<b>"Film":</b> ${film.Film},<br />
+				<b>Title:</b> ${film.Title}<br />
+				<b>"Year":</b> ${film.Year}<br />
+				<b>Director:</b>${film.Director}<br />
+				<b>Producers:</b>${film.Producers}<br />
+				<b>Writers:</b>${film.Writers}<br />
+				<b>Composer:</b>${film.Composer}<br />
+				<b>Bond:</b> ${film.Bond}<br />
+				<b>Budget:</b>${film.Budget}<br />
+				<b>Box Office:</b> ${film.BoxOffice}<br />
+				<div class="pic"><img src"thumbnails/${film.images}">
+			</div> 
+		
+			
+	`;
 }
 
 </script>
@@ -76,6 +107,7 @@ function bondJSON(data){
 		<a href="box" class="category">Bond Films By International Box Office Totals</a>
 		<h3 id="filmtitle">Title Will Go Here</h3>
 		<div id="films">
+			<!--
 			<div class="films">
 				<b>"Film":</b> 1,<br />
 				<b>Title:</b> Dr. No<br />
@@ -91,6 +123,7 @@ function bondJSON(data){
 				<b>"Film":</b> 1,<br />
 				<div class="pic"><img src"thumnails/dr-no.jpg">
 			</div>
+				-->
 			<p>Films will go here</p>
 		</div>
 		<div id="output">Results go here</div>
