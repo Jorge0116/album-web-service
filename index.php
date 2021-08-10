@@ -60,10 +60,15 @@ function bondJSON(data){
 	//this defines the type of info return
 	$('#filmtitle').html(data.title);
 
+	$('#films').html('');
+
 	$.each(data.films, function(i, item){
 		let str = bondTemplate(item);
-		
+
 		$('<div></div>').html(str).appendTo('#films');
+
+		//$str.appendTo('#films');
+		//$('#films').appendTo;
 
 	});
 // this way we can see all of the data in this page 
@@ -79,7 +84,7 @@ function bondJSON(data){
 
 }
 
-function bondTemplate(){
+function bondTemplate(film){
 	return `
 	<div class="films">
 				<b>"Film":</b> ${film.Film},<br />
