@@ -62,7 +62,7 @@ function bondJSON(data){
 
 	$('#films').html('');
 
-	$.each(data.films, function(i, item){
+	$.each(data.albums, function(i, item){
 		let str = bondTemplate(item);
 
 		$('<div></div>').html(str).appendTo('#films');
@@ -84,19 +84,13 @@ function bondJSON(data){
 
 }
 
-function bondTemplate(film){
+function bondTemplate(album){
 	return `
 	<div class="films">
-				<b>"Film":</b> ${film.Film},<br />
-				<b>Title:</b> ${film.Title}<br />
-				<b>"Year":</b> ${film.Year}<br />
-				<b>Director:</b>${film.Director}<br />
-				<b>Producers:</b>${film.Producers}<br />
-				<b>Writers:</b>${film.Writers}<br />
-				<b>Composer:</b>${film.Composer}<br />
-				<b>Bond:</b> ${film.Bond}<br />
-				<b>Budget:</b>${film.Budget}<br />
-				<b>Box Office:</b> ${film.BoxOffice}<br />
+				<b>"Year":</b> ${album.Year},<br />
+				<b>Artist:</b> ${album.Artist}<br />
+				<b>"Title":</b> ${album.Title}<br />
+				<b>Sales:</b>${album.Sales}<br />
 				<div class="pic"><img src"thumbnails/${film.images}">
 			</div> 
 		
