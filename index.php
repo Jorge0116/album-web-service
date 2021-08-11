@@ -72,11 +72,11 @@ function bondJSON(data){
 
 	});
 // this way we can see all of the data in this page 
-	/*
+	
 	let myData = JSON.stringify(data,null,4);
 	myData = '<pre>' + myData + '</pre>';
 	$("#output").html(myData);
-	 */
+	 
 
 
 // this works but the text is bunched up 
@@ -108,8 +108,8 @@ function bondTemplate(film){
 </head>
 	<body>
 	<h1>Albulm Web Service!</h1>
-		<a href="year" class="category">Bond Films By Year</a><br />
-		<a href="box" class="category">Bond Films By International Box Office Totals</a>
+		<a href="year" class="category">Albums By Year</a><br />
+		<a href="genre" class="category">Albulms By Genre</a>
 		<h3 id="filmtitle">Title Will Go Here</h3>
 		<div id="films">
 			<!--
