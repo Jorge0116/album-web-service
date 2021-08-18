@@ -23,7 +23,7 @@
 <script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {  
+/*$(document).ready(function() {  
 
 	$('.category').click(function(e){
         e.preventDefault(); //stop default action of the links
@@ -31,9 +31,21 @@ $(document).ready(function() {
 		loadAJAX(cat);  //load AJAX and parse JSON file
 	});
 });	
-
-
+*/
 function loadAJAX(cat)
+{
+	$.ajax({
+		type: "GET"
+		dataType: "json"
+		url: "api.php?cat=" + cat,
+		success: bondJSON,
+		error: function(xhr, status, error){
+			let errorMessage = xhr.status + ': ' + xhr.statusText
+			alert('Error - ' + errorMessage);
+		}
+	});
+}
+/*function loadAJAX(cat)
 {
 	//AJAX connection will go here
    // alert('cat is: ' + cat);
@@ -47,7 +59,7 @@ function loadAJAX(cat)
 
    });
 }
-    
+  */  
 function toConsole(data)
 {//return data to console for JSON examination
 	console.log(data); //to view,use Chrome console, ctrl + shift + j
@@ -61,12 +73,12 @@ function bondJSON(data){
 	$('#filmtitle').html(data.title);
 
 	$('#films').html('');
-
+	/*
 	$.each(data.albums, function(i, item){
 		let str = bondTemplate(item);
 
 		$('<div></div>').html(str).appendTo('#films');
-
+		*/
 		//$str.appendTo('#films');
 		//$('#films').appendTo;
 
@@ -91,7 +103,8 @@ function bondTemplate(album){
 				<b>Artist:</b> ${album.Artist}<br />
 				<b>"Title":</b> ${album.Title}<br />
 				<b>Sales:</b>${album.Sales}<br />
-				<div class="pic"><img src"thumbnails/${film.images}">
+				<b>Genre:</b> ${album.Genre}<br />
+				<div class="pic"><img src"thumbnails/${album.images}">
 			</div> 
 		
 			
