@@ -21,10 +21,10 @@
 			 {
 				"Year":2010,
 				"Artist":"Bruno Mars",
-				"Title":"Doo- Wops & Hooligans",
+				"Title":"Doo-Wops & Hooligans",
 				"Sales":1000000,
 				"Genre":"Pop",
-				"Image":"doo-woo-&-hoolingans.jpg"
+				"Image":"doo-wop-&-hoolingans.jpg"
 			 },
 			 {
 				"Year":2011,
