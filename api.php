@@ -29,7 +29,7 @@ if(isset($_REQUEST['cat']))
 	switch($_REQUEST['cat'])
 	{//determine contents of 'cat'
 		case "genre":
-			include('data/albums-genre.js'); //"box" orders by box office results
+			include('data/albums-genre.js'); //"genre" orders by genre
 			break;
 		default:
 			include('data/albums-year.js'); //default orders by year
