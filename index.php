@@ -23,7 +23,7 @@
 <script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-/*$(document).ready(function() {  
+$(document).ready(function() {  
 
 	$('.category').click(function(e){
         e.preventDefault(); //stop default action of the links
@@ -98,13 +98,13 @@ function bondJSON(data){
 
 function bondTemplate(album){
 	return `
-	<div class="films">
+		<div class="films">
 				<b>"Year":</b> ${album.Year},<br />
 				<b>Artist:</b> ${album.Artist}<br />
 				<b>"Title":</b> ${album.Title}<br />
 				<b>Sales:</b>${album.Sales}<br />
 				<b>Genre:</b> ${album.Genre}<br />
-				<div class="pic"><img src"thumbnails/${album.images}">
+				<div class="pic"><img src"thumbnails/${album.images}" />"</div>
 			</div> 
 		
 			
