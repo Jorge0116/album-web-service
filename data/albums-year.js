@@ -1,7 +1,7 @@
 {
-	"title": "Albulms By Year",
+	"title": "Albums By Year",
 	
-	"albulms":[
+	"albums":[
              {
 				"Year":1996,
 				"Artist":"Tupak Shakur",

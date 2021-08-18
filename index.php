@@ -27,16 +27,16 @@ $(document).ready(function() {
 
 	$('.category').click(function(e){
         e.preventDefault(); //stop default action of the links
-		cat = $(this).attr("href");  //get category from URL
-		loadAJAX(cat);  //load AJAX and parse JSON file
+			cat = $(this).attr("href");  //get category from URL
+			loadAJAX(cat);  //load AJAX and parse JSON file
 	});
 });	
 
 function loadAJAX(cat)
 {
 	$.ajax({
-		type: "GET"
-		dataType: "json"
+		type: "GET",
+		dataType: "json",
 		url: "api.php?cat=" + cat,
 		success: bondJSON,
 		error: function(xhr, status, error){
@@ -99,12 +99,12 @@ function bondJSON(data){
 function bondTemplate(album){
 	return `
 		<div class="films">
-				<b>"Year":</b> ${album.Year},<br />
+				<b>Year:</b> ${album.Year},<br />
 				<b>Artist:</b> ${album.Artist}<br />
-				<b>"Title":</b> ${album.Title}<br />
+				<b>Title:</b> ${album.Title}<br />
 				<b>Sales:</b>${album.Sales}<br />
 				<b>Genre:</b> ${album.Genre}<br />
-				<div class="pic"><img src"thumbnails/${album.images}" />"</div>
+				<div class="pic"><img src="thumbnails/${album.images}" />"</div>
 			</div> 
 		
 			
