@@ -31,7 +31,7 @@ $(document).ready(function() {
 		loadAJAX(cat);  //load AJAX and parse JSON file
 	});
 });	
-*/
+
 function loadAJAX(cat)
 {
 	$.ajax({
